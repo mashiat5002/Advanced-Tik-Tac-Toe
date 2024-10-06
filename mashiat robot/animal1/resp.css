@@ -1,0 +1,110 @@
+@media only screen and (max-width: 800px) {
+    body {
+      height: 100vh;
+      width: 100%;
+      position: static;
+    }
+  
+    .header {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+  
+    }
+  
+    #icon {
+      width: 30px;
+      cursor: pointer;
+      margin-top: 65px;
+      margin-right: 35px;
+    }
+  
+  
+    .logo,
+    .gameName {
+      margin-top: 60px;
+      font-size: 150%;
+      text-shadow: 2px 1px #2617f6;
+      color: rgb(221, 62, 23);
+      font-weight: 1000;
+      margin-left: 10px;
+  
+    }
+  
+    .box {
+      margin-top: 75px;
+      justify-items: center;
+  
+      height: 300px;
+      width: 350px;
+      background-color: #e21414;
+      border-radius: 20px;
+      box-shadow: 2px 2px 15px rgb(43, 35, 35);
+      padding: 60px 30px 30px 30px;
+  
+    }
+  
+    .box:hover {
+      background-color: rgb(39, 39, 81);
+      transition-duration: 2s;
+    }
+  
+    a {
+      margin-top: 10px;
+      background-color: transparent;
+      border-radius: 20px;
+    }
+  
+    .menu1,
+    .menu2,
+    .menu3,
+    .menu4 {
+      /* padding-top:  40px; */
+      font-size: 20px;
+      margin: 15px 15px;
+      background-color: #cd1a1a;
+      border-radius: 10px;
+    }
+  
+    .menu4:hover {
+      text-shadow: 2px 3px #3228c5;
+      font-weight: 600;
+    }
+  
+    .menu3:hover {
+      text-shadow: 2px 3px #3228c5;
+      font-weight: 600;
+  
+  
+    }
+  
+    .menu2:hover {
+      text-shadow: 2px 3px #3228c5;
+      font-weight: 600;
+  
+    }
+  
+    .menu1:hover {
+      text-shadow: 2px 3px #3228c5;
+      font-weight: 600;
+  
+    }
+  
+  
+  
+    .footer {
+      margin-top: 80px;
+      height: 100px;
+      width: 350px;
+      text-align: center;
+  
+  
+    }
+  
+    .footer-text p {
+      font-size: 15px;
+      color: var(--secondary-color);
+    }
+  
+  }

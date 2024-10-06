@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="gridd.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+  <center> 
+    <div class="n"> TIC TAC TOE </div>
+    <div class="name"> Choose A Grid</div>
+    <div class="grid">
+      
+        <div class="three">
+            <button id="B3">
+                <a href="plyr.html">3 X 3</a>
+            </button>
+        </div>
+        <div class="four">
+            <button id="B4">
+                <a href="plyr.html">4 X 4</a>
+            </button>
+        </div>
+        <div class="five">
+            <button id="B5">
+                <a href="plyr.html">5 X 5</a>
+            </button>
+        </div>
+    </div>
+</center>
+<script>
+        var b3 = document.getElementById('B3');
+        var b4 = document.getElementById('B4');
+        var b5 = document.getElementById('B5');
+        b3.addEventListener("click",function(){
+            localStorage.setItem('clicked_button','b3');
+        });
+        b4.addEventListener("click",function(){
+            localStorage.setItem('clicked_button','b4');
+        });
+        b5.addEventListener("click",function(){
+            localStorage.setItem('clicked_button','b5');
+        });
+
+
+</script>
+</body>
+</html>

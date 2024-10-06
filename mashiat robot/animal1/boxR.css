@@ -1,0 +1,34 @@
+@media screen and (max-width: 600px) {
+    body {
+     background-image: url(best-gaming-background-d36rt32b2426dgqr.jpg);
+    }
+    .pname p{
+
+        text-align: center;
+        font-size: 40px;
+        text-shadow:1px 2px  #646ae2;
+        color: rgb(221, 62, 23);
+        margin-left: 30px;
+    }
+    .p1 input{
+        text-align: center;
+        margin-left: 20px;
+        height: 50px;
+        width: 170px;
+        background-color: #4d2828;
+        border: 1px solid white;
+        color: rgb(209, 209, 226);
+        font-size: 18px;
+    }
+    .logo{
+       
+        font-size: 300%;
+        text-shadow:3px 3.3px  #646ae2;
+        color: rgb(221, 62, 23);
+        font-weight: 1000;
+       text-align: left;
+       margin-left: 10px;
+    
+    }
+    
+  }

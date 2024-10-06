@@ -1,0 +1,104 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrollbars */
+}
+.box{
+    aspect-ratio: 1/1;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+}
+.halfHidden{
+    height: 100%;
+    width: 50%;
+    background-color: black;
+    position: absolute;
+    margin-right: 50%;
+    visibility: hidden;
+    z-index: 6;
+    animation: halfHidden 0.5s;
+    
+    
+}
+
+
+.outercircle1{
+    height: 70%;
+    width: 70%;
+    border-radius: 50%;
+    background-image: linear-gradient( to right, aqua 50.5%, transparent 50%);
+    
+  animation: 0.5s cir linear forwards;
+  z-index: 5;
+  
+   
+
+}
+.outercircle2{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background-image: linear-gradient( to right, aqua 50%, transparent 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: 0.5s cir linear forwards ;
+    animation-delay: 0.5s;
+    position: relative;
+    
+  
+  
+   
+
+}
+.innerCircle{
+    
+    border-radius: 50%;
+    height: 80%;
+    width: 80%;
+    background-color: black;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+}
+@keyframes cir{
+    0%{
+        transform: rotate(0deg);
+       
+    }
+    100%{
+        transform: rotate(180deg);
+    }
+}
+.fuljhoribox{
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    /* background-color: red; */
+    z-index: 90;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 90%;
+}
+
+
+
+
+
+@keyframes halfHidden {
+    from{
+        visibility: visible;
+    }
+    to{
+        visibility: hidden;
+    }
+    
+}

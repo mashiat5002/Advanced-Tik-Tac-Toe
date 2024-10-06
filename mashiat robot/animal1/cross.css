@@ -1,0 +1,78 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrollbars */
+}
+.crossContainer{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.crossSquare{
+    height: 90%;
+    width: 90%;
+    background-color: black;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+   
+   
+
+}
+.onehand{
+    position: absolute;
+    height: 10%;
+    width: 0%;
+    background-color: aqua;
+    
+  
+    transform: rotate(45deg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+
+    animation: crossanim  0.5s forwards linear ;
+    
+    
+    
+    
+}
+#secondHand{
+    
+    transform: rotate(135deg);
+
+}
+
+.ballboxforhands{
+    
+    height: 100%;
+    width: 10%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-right: -20px; */
+   
+}
+
+
+
+
+/* ball animation */
+@keyframes crossanim {
+    0%{
+        width: 0%;
+    }
+   
+    100%{
+        width: 100%;
+    }
+    
+}

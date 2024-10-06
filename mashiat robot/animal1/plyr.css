@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background-color: #212121;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(dp.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.name{
+    
+    font-size: 280%;
+    text-shadow: 2px 1px #17f656;
+    color: rgb(23, 59, 221);
+    font-weight: 1000;
+  
+   
+}
+.n{
+    font-size: 380%;
+    text-shadow: 2px 1px #17f656;
+    color: rgb(23, 59, 221);
+    font-weight: 1000;
+  margin-bottom: 60px;
+}
+.grid{
+    width: 400px;
+    height: 300px;
+    
+   
+    border-radius: 15px;
+    box-shadow: 1px 1px 18px rgb(224, 215, 215);
+    align-items: center;
+    }
+    button{
+        height: 100px;
+        width: 300px;
+      background: transparent;
+      
+    box-shadow: 1px 1px 12px rgb(223, 212, 212);
+    border-radius: 10%;
+   margin-top: 30px;
+    }
+    #friendButton{
+
+      cursor: pointer;
+      color: #212121;
+      font-size: 2.5rem;
+       color: #d6b210;
+        text-decoration: none;
+        font-weight: 1000;
+    }
+    a{
+        color: #212121;
+      font-size: 2.5rem;
+       color: #d6b210;
+        text-decoration: none;
+        font-weight: 1000;
+    }
+    a:hover{
+        text-shadow: 4px 4px #040309a1;
+    }
+    /* Add your existing styles here */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  padding-top:60px;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #750606;
+  margin: 3.8% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+ 
+}
+.modal-content1{
+  
+  background-color: #750606;
+  margin: 3.8% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  text-align: left;
+border-radius: 10%;
+  box-shadow: 0px 0px 12px white;
+
+}
+.l{
+
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-size: 40px;
+ border-radius: 12px;
+ padding-top: 5px;
+ padding-bottom: 5px;
+ margin-bottom: 15px;
+ box-shadow: 0px 0px 4px white;
+ background-color: transparent;
+ cursor: pointer;
+ 
+ 
+}
+
+#Level{
+ 
+  background-color: #a417f6;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-size: 40px;
+ margin-left: 20px;
+ box-shadow: 0px 0px 4px white;
+ border-radius: 12px;
+ padding-top: 5px;
+ padding-bottom: 5px;
+ cursor: pointer;
+ margin-bottom: 20px;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: 35px;
+}
+input{
+  height: 40px;
+  width: 180px;
+  margin: 20px;
+  text-align: center;
+  font-size: 22px;
+  background-color: transparent;
+  border: none;
+  color: rgb(255, 6, 6);
+  font-size: 23px;
+  box-shadow: 0px 0px 8px white;
+
+}
+#computerButton{
+  color: #212121;
+  font-size: 2.5rem;
+   color: #d6b210;
+    text-decoration: none;
+    font-weight: 1000;
+cursor: pointer;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+ 
+}
+.opTR{
+  width: 90px;
+  opacity: 50%;
+  cursor: pointer;
+}
+
+.opcitityOptr{
+  opacity: 100%;
+}
+#numTR,#noWhere{
+  color: #d6b210;
+  font-size:  2.5rem;
+  font-weight: 1000;
+}
+.vsblt0{
+  visibility: hidden;
+}
+.vsblt1{
+  visibility: visible;
+}

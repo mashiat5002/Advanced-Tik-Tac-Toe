@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compitable" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="project1.css">
+  <link rel="stylesheet" href="resp.css">
+
+</head>
+
+<body>
+
+
+  <!--header design-->
+  <div class="header">
+    <div class="logo">SAM </div>
+    <div class="gameName">
+      TIC TAC TOE
+    </div>
+
+    <div class="icon">
+      <img src="night1.png" id="icon">
+    </div>
+  </div>
+  <center>
+
+    <div class="box">
+      
+
+
+      <div id="manu1" class="menu1"> <a id="menu1" href="five.html" >Resume Game</a> </div>
+      <div  class="menu2"> <a id="menu2" href="grid.html">New Game</a> </div>
+      <div  class="menu3"> <a id="menu3" href="index.html">Help</a> </div>
+      <div  class="menu4"> <a id="menu4" onclick="exit()">Exit</a> </div>
+      
+
+      
+      <div id="loginLogoContainer"  class="loginLogoContainer">
+
+        
+        <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+        <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 16C8 18.8284 8 20.2426 8.87868 21.1213C9.51998 21.7626 10.4466 21.9359 12 21.9827M8 8C8 5.17157 8 3.75736 8.87868 2.87868C9.75736 2 11.1716 2 14 2H15C17.8284 2 19.2426 2 20.1213 2.87868C21 3.75736 21 5.17157 21 8V10V14V16C21 18.8284 21 20.2426 20.1213 21.1213C19.3529 21.8897 18.175 21.9862 16 21.9983" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M3 9.5V14.5C3 16.857 3 18.0355 3.73223 18.7678C4.46447 19.5 5.64298 19.5 8 19.5M3.73223 5.23223C4.46447 4.5 5.64298 4.5 8 4.5" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M6 12L15 12M15 12L12.5 14.5M15 12L12.5 9.5" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    
+
+      </div>
+
+
+
+    </div>
+
+  </center>
+  <!--footer-->
+
+  <center>
+    <footer class="footer">
+      <div class="footer-text">
+        <p>Copyright &copy; 2023 by SAM | All Rights Reserved.</p>
+      </div>
+    </footer>
+  </center>
+  
+  <audio id="clickAudio" src="menu.mp3"></audio>
+
+  
+
+  <script>
+    var clickAudio = document.getElementById("clickAudio");
+
+    function playClickAudio(event) {
+
+      event.preventDefault();
+      setTimeout(function() {
+    window.location.href = event.target.href; // Navigate to the link after 1 second
+  }, 300);
+
+      console.log('mashiat');
+      if (clickAudio.paused) {
+                clickAudio.play();
+            } else {
+                clickAudio.pause();
+                clickAudio.currentTime = 0; // Reset audio to the beginning
+                clickAudio.play();
+    }}
+
+
+///// Same function  as playClickAudio just without preventdefault part
+    function playClickAudioforicon() {
+
+
+
+console.log('mashiat');
+if (clickAudio.paused) {
+          clickAudio.play();
+      } else {
+          clickAudio.pause();
+          clickAudio.currentTime = 0; // Reset audio to the beginning
+          clickAudio.play();
+}}
+
+
+
+
+
+
+    var menuLinks1 = document.getElementById('menu1');
+    var menuLinks2 = document.getElementById('menu2');
+    var menuLinks3 = document.getElementById('menu3');
+    var menuLinks4 = document.getElementById('menu4');
+    var icon = document.getElementById("icon");
+
+    menuLinks1.addEventListener("click", playClickAudio);
+    menuLinks2.addEventListener("click", playClickAudio);
+    menuLinks3.addEventListener("click", playClickAudio);
+    menuLinks4.addEventListener("click", playClickAudio);
+    icon.addEventListener("click", playClickAudioforicon);
+
+    icon.addEventListener("click", function () {
+      var dark = document.body.classList.toggle("dark");
+      if (dark) {
+        icon.src = "day1.png";
+      } else 
+        icon.src = "night1.png";
+      }
+    );
+
+    document.getElementById('loginLogoContainer').addEventListener('click',function(){
+      window.location.href = 'li.html';
+    })
+    function exit(){
+      if (window.close) {
+            window.close();
+        } else {
+            alert("Sorry, your browser does not support the window.close() method.");
+        }
+    }
+  </script>
+
+</body>
+
+</html>

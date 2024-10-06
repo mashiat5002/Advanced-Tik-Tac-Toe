@@ -1,0 +1,12 @@
+@media screen and (max-width: 600px) {
+    body {
+   background-image: url(ab.jpg);
+    }
+    .n{
+    margin-bottom: 100px;
+        font-size: 280%;
+        text-shadow: 2px 1px #17f656;
+        color: rgb(23, 59, 221);
+        font-weight: 1000; 
+    }
+}

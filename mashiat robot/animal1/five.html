@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link rel="stylesheet" href="five.css">
+<link rel="stylesheet" href="Four4.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+ 
+</head>
+
+<body>
+   
+    
+    <div id="log" class="logo">SAM </div>
+   <div class="nameholder">
+
+    <!-- //////////////////////////////////////////////////////// -->
+    <div id="Notif_Con" class="Notif_Con">
+        <div class="conRoundout">
+                
+            <div class="RoundEndContainer">
+                <div class="rnded">
+                    <p id="R_end">ROUND ENDED</p>
+
+                </div>
+                <div class="btns">
+                
+                    <div id="Return" class="btn">
+                         <a id="rtrn" href="project1.html" >Home</a> 
+                        
+                        
+                    </div>
+                    <div id="StartOver" class="btn">
+                        <p id="StartOverText" class="btnWord">Start Over</p>
+                        
+                    </div>
+                    <div id="NextRound" class="btn">
+                        <p id="NextRoundText" class="btnWord">Next Round</p>
+
+                    </div>
+                </div>
+
+
+                <div class="winnerHint">
+                    <div id="Titile" class="winnerName">
+                        <p id="ROUNDWINNER">ROUND WINNER</p>
+
+                    </div>
+                    <div id="winnerName" class="winnerName">
+                        <p id="winName">Mashiat Islam</p>
+
+
+                    </div>
+
+                </div>
+                
+               
+            </div>
+            
+        </div>
+        <!-- //***********************/ -->
+        
+    </div>
+    <div class="player">
+        
+        <div class="score_container">
+            
+
+            <div class="coinmain">
+                <div id="p1" class="p1">
+                    <input id="place1" type="text" placeholder="">
+                    
+                </div>
+                
+                <div id="p2" class="p1">
+                    <input id="place2" type="text" placeholder="Who takes Turn">
+                    
+                </div>
+            </div>
+            <div class="score_container2">
+
+
+                <div id="plr1name" class="plr1name">
+                    <p id="p_name1" class="p">Player 1</p>
+                </div>
+                <div class="plr1scr">
+                    <p id="scr1" class="ps">0</p>
+                    
+                </div>
+                
+                <div class="drwCon">
+                    
+                   
+                    <div class="draw_text">
+                        <p class="drt">TIED</p>
+
+
+                    </div>
+                    <p id="scr0" class="ps">0</p>
+
+                    
+                </div>
+                
+                <div class="plr2scr">
+                    <p id="scr2" class="ps">0</p>
+                </div>
+                
+                <div id="test" class="plr2name">
+                    <p id="p_name2"  class="p">Player 2</p>
+    
+                </div>
+    
+            </div>
+        </div>
+    </div>
+   </div>
+    
+    <div class="display">
+        <div id="box8Container" class="box8Container">
+            
+
+            
+            <div id="box8" class="box8">
+                
+                
+                <div id="div0" class="div"></div>
+                <div id="div1" class="div"></div>
+                <div id="div2" class="div"></div>
+                <div id="div3" class="div"></div>
+                <div id="div4" class="div"></div>
+                <div id="div5" class="div"></div>
+                <div id="div6" class="div"></div>
+                <div id="div7" class="div"></div>
+                <div id="div8" class="div"></div>
+                <div id="div9" class="div"></div>
+                <div id="div10" class="div"></div>
+                <div id="div11" class="div"></div>
+                <div id="div12" class="div"></div>
+                <div id="div13" class="div"></div>
+                <div id="div14" class="div"></div>
+                <div id="div15" class="div"></div>
+                <div id="div16" class="div"></div>
+                <div id="div17" class="div"></div>
+                <div id="div18" class="div"></div>
+                <div id="div19" class="div"></div>
+
+                <div id="div20" class="div"></div>
+                <div id="div21" class="div"></div>
+                <div id="div22" class="div"></div>
+                <div id="div23" class="div"></div>
+                <div id="div24" class="div"></div>
+                
+                
+                
+            </div>
+            
+            
+        </div>
+        <div class="trackercon">
+            <div id="back" class="btn">
+                <p id="StartOverText" class="btnWord">Undo</p>
+                
+            </div>
+
+
+
+            <div id="forward" class="btn">
+                        <p id="StartOverText" class="btnWord">Redo</p>
+                        
+                    </div>
+
+            </div>
+            
+        </div>
+        
+    </div>
+    <audio id="clickAudio" src="a.mp3"></audio>
+    <audio id="ending" src="GameEnding.wav"></audio>
+    <audio id="Rending_sound" src="Roundends.wav"></audio>
+    <audio id="coinspinnsound" src="coinspinn.mp3"></audio>
+    
+    <script>
+
+      
+
+
+        
+
+
+        
+
+
+
+        if(localStorage.getItem('name1')!=''){
+        document.getElementById('p_name1').textContent=localStorage.getItem('name1').toUpperCase();
+        localStorage.setItem('name1', localStorage.getItem('name1').toUpperCase());
+   
+    }
+        else
+        localStorage.setItem('name1','Player 1');
+
+        if(localStorage.getItem('name2')!=''){
+        document.getElementById('p_name2').textContent=localStorage.getItem('name2').toUpperCase();
+        localStorage.setItem('name2', localStorage.getItem('name2').toUpperCase());
+    }
+        else
+        localStorage.setItem('name2','Player 2');
+
+
+
+/////////////***************************************************************************
+        
+        var clickAudio = document.getElementById("clickAudio");
+        
+        function playClickAudio() {
+            
+            if (clickAudio.paused) {
+                clickAudio.play();
+            } else {
+                clickAudio.pause();
+                clickAudio.currentTime = 0; // Reset audio to the beginning
+                clickAudio.play();
+  }
+
+
+
+        }
+        var box = new Array(25);
+         box[0] = document.getElementById('div0');
+         box[1] = document.getElementById('div1');
+         box[2] = document.getElementById('div2');
+         box[3] = document.getElementById('div3');
+         box[4] = document.getElementById('div4');
+         box[5] = document.getElementById('div5');
+         box[6] = document.getElementById('div6');
+         box[7] = document.getElementById('div7');
+         box[8] = document.getElementById('div8');
+         box[9] = document.getElementById('div9');
+         box[10] = document.getElementById('div10');
+         box[11] = document.getElementById('div11');
+         box[12] = document.getElementById('div12');
+         box[13] = document.getElementById('div13');
+         box[14] = document.getElementById('div14');
+         box[15] = document.getElementById('div15');
+         box[16] = document.getElementById('div16');
+         box[17] = document.getElementById('div17');
+         box[18] = document.getElementById('div18');
+         box[19] = document.getElementById('div19');
+         box[20] = document.getElementById('div20');
+         box[21] = document.getElementById('div21');
+         box[22] = document.getElementById('div22');
+         box[23] = document.getElementById('div23');
+         box[24] = document.getElementById('div24');
+
+
+
+
+
+
+
+         var clicked_button = localStorage.getItem('clicked_button');
+        
+
+
+        if(clicked_button == 'b3'){
+            box[3].remove();
+            box[4].remove();
+            box[8].remove();
+            box[9].remove();
+            box[13].remove();
+            box[14].remove();
+            box[15].remove();
+            box[16].remove();
+            box[17].remove();
+            box[18].remove();
+            box[19].remove();
+            box[20].remove();
+            box[21].remove();
+            box[22].remove();
+            box[23].remove();
+            box[24].remove();
+
+            box[3]=false;
+            box[4]=false;
+            box[8]=false;
+            box[9]=false;
+            box[13]=false;
+            box[14]=false;
+            box[15]=false;
+            box[16]=false;
+            box[17]=false;
+            box[18]=false;
+            box[19]=false;
+            box[20]=false;
+            box[21]=false;
+            box[22]=false;
+            box[23]=false;
+            box[24]=false;
+
+           
+            document.documentElement.style.setProperty('--size','29%');
+         
+            
+
+        }
+        if(clicked_button == 'b4'){
+            box[4].remove();
+            box[9].remove();
+            box[14].remove();
+            box[19].remove();
+            box[20].remove();
+            box[21].remove();
+            box[22].remove();
+            box[23].remove();
+            box[24].remove();
+
+            box[4]=false;
+            box[9]=false;
+            box[14]=false;
+            box[19]=false;
+            box[20]=false;
+            box[21]=false;
+            box[22]=false;
+            box[23]=false;
+            box[24]=false;
+            document.documentElement.style.setProperty('--size','21%');
+            
+
+        }
+
+
+
+
+
+
+
+
+    
+
+         
+         
+ 
+        // box25.addEventListener("click", playClickAudio);
+        
+        var iframe1 = document.createElement("iframe");
+        var iframe2 = document.createElement("iframe");
+        var iframe3 = document.createElement("iframe");
+        
+        iframe1.src = "cross.html";
+        iframe2.src = "Tcir.html";
+        iframe3.src = "new.html";
+        
+        
+        
+        iframe1.width = "100%";
+        iframe1.height = "100%";
+        iframe2.height = "100%";
+        iframe2.width = "100%";
+        iframe3.height = "100%";
+        iframe3.width = "100%";
+        
+        iframe1.frameBorder = "0";
+        iframe2.frameBorder = "0";
+        iframe2.frameBorder = "0";
+        
+        
+        
+     
+    
+
+        var click = 1;
+
+      
+
+        class myDivclass{
+          constructor(baksho,value){
+          this.baksho= baksho;
+          this.value= value;
+        }
+        }
+        var Divclass_ = new Array(25);
+        for(let v=0;v<25;v++){
+         Divclass_[v] = new myDivclass(box[v],0); 
+          }
+       
+        var Arr0 = new Array(Divclass_[2],Divclass_[6],Divclass_[10]);
+        var Arr1 = new Array(Divclass_[0],Divclass_[1],Divclass_[2],Divclass_[3]);
+        var Arr2 = new Array(Divclass_[5],Divclass_[6],Divclass_[7],Divclass_[8]);
+        var Arr3 = new Array(Divclass_[10],Divclass_[11],Divclass_[12],Divclass_[13]);
+        var Arr4 = new Array(Divclass_[15],Divclass_[16],Divclass_[17],Divclass_[18]);
+        var Arr5 = new Array(Divclass_[20],Divclass_[21],Divclass_[22],Divclass_[23]);
+        var Arr6 = new Array(Divclass_[0],Divclass_[5],Divclass_[10],Divclass_[15]);
+        var Arr7 = new Array(Divclass_[1],Divclass_[6],Divclass_[11],Divclass_[16]);
+        var Arr8 = new Array(Divclass_[2],Divclass_[7],Divclass_[12],Divclass_[17]);
+        var Arr9 = new Array(Divclass_[3],Divclass_[8],Divclass_[13],Divclass_[18]);
+        var Arr10 = new Array(Divclass_[4],Divclass_[9],Divclass_[14],Divclass_[19]);
+
+        var Arr11 = new Array(Divclass_[1],Divclass_[2],Divclass_[3],Divclass_[4]);
+        var Arr12 = new Array(Divclass_[6],Divclass_[7],Divclass_[8],Divclass_[9]);
+        var Arr13 = new Array(Divclass_[11],Divclass_[12],Divclass_[13],Divclass_[14]);
+        var Arr14 = new Array(Divclass_[16],Divclass_[17],Divclass_[18],Divclass_[19]);
+        var Arr15 = new Array(Divclass_[21],Divclass_[22],Divclass_[23],Divclass_[24]);
+        var Arr16 = new Array(Divclass_[5],Divclass_[10],Divclass_[15],Divclass_[20]);
+        var Arr17 = new Array(Divclass_[6],Divclass_[11],Divclass_[16],Divclass_[21]);
+        var Arr18 = new Array(Divclass_[7],Divclass_[12],Divclass_[17],Divclass_[22]);
+        var Arr19 = new Array(Divclass_[8],Divclass_[13],Divclass_[18],Divclass_[23]);
+        var Arr20 = new Array(Divclass_[9],Divclass_[14],Divclass_[19],Divclass_[24]);
+
+        var Arr21 = new Array(Divclass_[15],Divclass_[11],Divclass_[7],Divclass_[3]);
+        var Arr22 = new Array(Divclass_[1],Divclass_[7],Divclass_[13],Divclass_[19]);
+        var Arr23 = new Array(Divclass_[9],Divclass_[13],Divclass_[17],Divclass_[21]);
+        var Arr24 = new Array(Divclass_[5],Divclass_[11],Divclass_[17],Divclass_[23]);
+
+        var Arr25 = new Array(Divclass_[0],Divclass_[6],Divclass_[12],Divclass_[18]);
+        var Arr26 = new Array(Divclass_[6],Divclass_[12],Divclass_[18],Divclass_[24]);
+        var Arr27 = new Array(Divclass_[4],Divclass_[8],Divclass_[12],Divclass_[16]);
+        var Arr28 = new Array(Divclass_[8],Divclass_[12],Divclass_[16],Divclass_[20]);
+
+
+        var aRR= new Array(Arr0,Arr1,Arr2,Arr3,Arr6,Arr7,Arr8,Arr25,  Arr4,Arr9,Arr21,  Arr5,Arr10,Arr11,Arr12,Arr13,Arr14,Arr15,Arr16,Arr17,Arr18,Arr19,Arr20,Arr22,Arr23,Arr24,Arr26,Arr27,Arr28);
+          var Ran= new Array (0,0,0,0);
+
+          function youTakefirst(){
+            click=2;
+            let mis= G_random();
+            aRR[mis][1].value='X';
+            aRR[mis][1].baksho.appendChild(iframe1.cloneNode(true));
+                click++;
+                draw_count--;
+            }
+         
+
+            class traking_class{
+        constructor(ind,val){
+          this.ind= ind;
+          this.val= val;
+        }
+
+       }
+              
+        var trk=-1;
+        var tracker = new Array(25);
+            function undo(){
+                if(trk>=0 ){
+                Divclass_[tracker[trk].ind].value=0;
+                box[tracker[trk].ind].removeChild(box[tracker[trk].ind].firstChild);
+                trk--;
+                draw_count++;
+                if(tracker[trk+1].val=='X')
+                click=2;
+                    else
+                    click=1;
+            }
+
+            }
+            function redo(){
+                if(tracker[trk+1].val == 'O' || tracker[trk+1].val == 'X'){
+                trk++;
+                if(tracker[trk].val =='O'){
+                    Divclass_[tracker[trk].ind].value='O';
+                box[tracker[trk].ind].appendChild(iframe2.cloneNode(true));
+                draw_count++;
+
+                }
+                else{
+                    Divclass_[tracker[trk].ind].value='X';
+                box[tracker[trk].ind].appendChild(iframe1.cloneNode(true));
+                draw_count++;
+
+                }
+            }
+               
+
+            }
+
+
+            var game=1;
+
+
+        for(let v=0;v<25;v++){
+            if(box[v])
+        box[v].addEventListener("click", function(){
+            trk++;
+            
+            if(game==0){
+            if(click%2==0)
+            {
+                tracker[trk]=new traking_class(v,'X');
+                Divclass_[v].value='X';
+                box[v].appendChild(iframe1.cloneNode(true));
+                if(box[3])
+                setTimeout(Robo_priority,500);
+            else
+            setTimeout(Robo_priority3X3,500);
+            }
+            else{
+                Divclass_[v].value='O';
+                tracker[trk]=new traking_class(v,'O');
+                box[v].appendChild(iframe2.cloneNode(true));
+                if(box[3])
+                setTimeout(Robo_priority,500);
+            else
+            setTimeout(Robo_priority3X3,500);
+                
+            }
+                click++;
+                playClickAudio();
+                Game_check();
+                G_random();
+        }}
+        
+        
+        );}
+
+        function addWinX(){
+            setTimeout(function(){
+                document.getElementById('box8').appendChild(iframe1.cloneNode(true));
+               
+
+            },500);
+        }
+        function addWinY(){
+            setTimeout(function(){
+                document.getElementById('box8').appendChild(iframe2.cloneNode(true));
+               
+
+            },500);
+        }
+        function addWinZ(){
+            setTimeout(function(){
+                document.getElementById('box8').appendChild(iframe3.cloneNode(true));
+               
+
+            },500);
+        }
+        
+        function Game_check(){
+
+            
+
+
+           
+
+
+            var p,q;
+
+            if(box[4])
+            {   
+                p=1;
+                q=29;
+                t=4;
+            }
+            else if(box[3])
+            {   
+                p=1;
+                q=11;
+                t=4;
+            }
+            else
+            {   
+                p=0;
+                q=8;
+                t=3;
+            }
+
+
+            for(let v=p;v<q;v++){
+                var count1=0;
+                var count2=0;
+                for(let j=0;j<t;j++){
+                    if(aRR[v][j].value == 'X')
+                    count1++;
+                    if(aRR[v][j].value == 'O')
+                    count2++;
+                    
+                    
+                    
+                }
+             
+                if(box[3]){
+                if(count1==4 || count2==4){
+                    game++;
+                    for(let j=0;j<4;j++)
+                    aRR[v][j].baksho.classList.add('winning_Anim');
+
+
+                    setTimeout(function(){
+            
+            if(aRR[v][1].value=='X'){
+                
+                
+                
+                plr1_scr++;
+                localStorage.setItem('localP1',plr1_scr);
+            document.getElementById('scr1').textContent= localStorage.getItem('localP1');
+            document.getElementById('winName').textContent =localStorage.getItem('name1');
+            G_over();
+            notification();
+                
+                
+                
+            }
+            else{
+                
+               
+                
+                plr2_scr++;
+                localStorage.setItem('localP2',plr2_scr);
+             document.getElementById('scr2').textContent= localStorage.getItem('localP2');
+             document.getElementById('winName').textContent =localStorage.getItem('name2');
+             G_over();
+             notification();
+          
+              
+
+            }
+        },2000);
+        
+        
+        
+    }}
+    else{
+                   
+                if(count1==3 || count2==3){
+                    game++;
+                   
+                
+               
+                    for(let j=0;j<3;j++)
+                    aRR[v][j].baksho.classList.add('winning_Anim');
+
+
+                    setTimeout(function(){
+          
+            if(aRR[v][1].value=='X'){
+            
+            
+            plr1_scr++;
+                localStorage.setItem('localP1',plr1_scr);
+            document.getElementById('scr1').textContent= localStorage.getItem('localP1');
+            document.getElementById('winName').textContent =localStorage.getItem('name1');
+            G_over();
+            notification();
+            
+            
+            
+        }
+        else{
+            
+            
+            
+            plr2_scr++;
+                localStorage.setItem('localP2',plr2_scr);
+             document.getElementById('scr2').textContent= localStorage.getItem('localP2');
+             document.getElementById('winName').textContent =localStorage.getItem('name2');
+             G_over();
+             notification();
+            
+
+        }
+        },1500);
+        
+        
+    }}
+    
+}
+            draw_count--;
+            if(draw_count==0 && game==0)
+            {
+                game++;
+                draw();
+                setTimeout(G_over,1000);
+            }
+
+        }
+
+        
+
+        var priority_ = new Array(11);
+      
+        var difficulty= localStorage.getItem('difficulty');
+
+
+        function Robo_priority(){
+            for(let k=1;k<11;k++)
+                {
+                    priority_[k]=-1;
+                        
+                }
+                var r;
+                if(box[4]){
+                r=29;
+            }
+                else 
+                {
+                r=11;
+            }
+
+            for(let v=1;v<r;v++){
+                var count1=0;
+                var count2=0;
+                for(let j=0;j<4;j++){
+                    if(aRR[v][j].value == 'X')
+                    count1++;
+                    if(aRR[v][j].value == 'O')
+                    count2++;
+         
+            }
+            
+            
+            if(count2==0 && count1==3 && difficulty!='e')
+                priority_[1]=v;
+            else if(count1==0 && count2==3 )
+                priority_[2]=v;
+            else if(count2==0 && count1==2 && difficulty!='e')
+                priority_[3]=v;
+            else if(count2==2 && count1==0 && difficulty=='h')
+                priority_[4]=v;
+            else if(count2==0 && count1==1 && difficulty!='e')
+                priority_[5]=v;
+            else if(count2==1 && count1==0 && difficulty!='e')
+                priority_[6]=v;
+            else if(count2==0 && count1==0 && (difficulty=='m' || difficulty=='h'))
+                priority_[7]=v;
+            else if(count2==2 && count1==1 && (difficulty=='m' || difficulty=='h'))
+                priority_[8]=v;
+            else if(count2==1 && count1==2 && (difficulty=='m' || difficulty=='h'))
+                priority_[9]=v;
+            else if(count2==1 && count1==1 && (difficulty=='m' || difficulty=='h'))
+                priority_[10]=v;
+          
+
+
+            
+                if(v==r-1 && game==0 && localStorage.getItem('No_robot')!='1')
+            Robo_takes();
+        }}
+        var rt_num=0;
+
+        function Robo_priority3X3(){
+            for(let k=1;k<11;k++)
+                {
+                    priority_[k]=-1;
+                        
+                }
+
+            for(let v=0;v<8;v++){
+                var count1=0;
+                var count2=0;
+                for(let j=0;j<3;j++){
+                    if(aRR[v][j].value == 'X')
+                    count1++;
+                    if(aRR[v][j].value == 'O')
+                    count2++;
+         
+            }
+            
+            
+            if(count2==0 && count1==2 && (difficulty=='m' || difficulty=='h'))
+                priority_[1]=v;
+            else if(count1==0 && count2==2 )
+                priority_[2]=v;
+            else if(count2==0 && count1==1 && (difficulty=='m' || difficulty=='h'))
+                priority_[3]=v;
+            else if(count2==1 && count1==0 && (difficulty=='m' || difficulty=='h') )
+                priority_[4]=v;
+         
+            else if(count2==0 && count1==0 && (difficulty=='m' || difficulty=='h'))
+                priority_[7]=v;
+         
+            else if(count2==1 && count1==1 && (difficulty=='m' || difficulty=='h'))
+                priority_[10]=v;
+
+
+            
+
+
+                if(v==7 && game==0 && localStorage.getItem('No_robot')!='1'){
+                    if(rt_num<3)
+                rt_num++;
+
+                    Robo_takes();
+                }
+                
+        }}
+
+        
+
+        
+        
+        function Robo_takes(){
+            
+            var r,s,f;
+            
+            for(var k=1;k<11;k++)
+                {
+                    if(priority_[k]!=-1){
+                        break; 
+
+                }
+            }
+            if(k==11)
+            priority_[k]= G_random();
+          
+            if(box[3])
+            {
+                r=0;
+                s=4;
+            }
+            else{
+                r=0;
+                s=3;
+
+            }
+            
+            f=-1;
+            for(let j=r;j<s;j++)
+            {
+                
+                if((aRR[priority_[k]][j].value==0))
+                {
+                        f++;
+                        Ran[f]=j;
+                        
+                        
+                    }
+                    
+                }
+
+                j= Ran[Math.floor(Math.random() * (f+1))];
+             
+                  
+                if(rt_num==1 && (aRR[0][1].value != 'X' && aRR[0][1].value != 'O') && difficulty=='h')
+                {
+                    priority_[k]=0;
+                    j=1;
+                }
+                    
+                   
+
+                  
+                            if(click%2==0){
+                                aRR[priority_[k]][j].value = 'X';
+                                aRR[priority_[k]][j].baksho.appendChild(iframe1.cloneNode(true));
+                                click++;
+                    
+                            playClickAudio();
+                            Game_check();
+                            }
+
+                            else{
+                                aRR[priority_[k]][j].value = 'O';
+                                aRR[priority_[k]][j].baksho.appendChild(iframe2.cloneNode(true));
+                                click++;
+                    
+                            playClickAudio();
+                            Game_check();
+                            
+
+                            }
+                       
+                    
+
+        }
+
+        //*****************************************************************************************************************
+
+
+        function G_random(){
+            var p,q,x,y;
+
+            if(box[4])
+            {   
+                p=1;
+                q=29;
+                t=4;
+            }
+            else if(box[3])
+            {   
+                p=1;
+                q=11;
+                t=4;
+            }
+            else
+            {   
+                p=0;
+                q=8;
+                t=3;
+            }
+            var rando= new Array(q);
+            x=-1;
+            for(let v=p;v<q;v++){
+                
+                for(let j=0;j<t;j++){
+                   if(aRR[v][j].value == 0)
+                   {
+                    x++;
+                   rando[x]=v;
+                }
+                
+            }
+            
+            
+            
+        }
+        y=rando[Math.floor(Math.random()*(x+1))];
+        
+        return y;
+        }
+
+        var pl1=document.getElementById('place1');
+        var pl2=document.getElementById('place2');
+        var p1=document.getElementById('p1');
+        var p2=document.getElementById('p2');
+
+
+        document.getElementById('p2').addEventListener('click' ,function(){
+            game=0;
+            document.getElementById('coinspinnsound').play();
+            if((Math.floor(Math.random()*2)) %2==0){
+            if(textContent=localStorage.getItem('name2')!='')
+            pl1.value= textContent=localStorage.getItem('name2').toUpperCase();
+                else
+                pl1.value='Player2';
+                if(textContent=localStorage.getItem('name1')!='')
+           pl2.value= textContent=localStorage.getItem('name1').toUpperCase();
+                else
+                pl2.value= 'Player1'
+           if(localStorage.getItem('No_robot')!='1')
+           setTimeout(youTakefirst,3500);
+                else
+                click=2;
+        }
+        else{
+            if(textContent=localStorage.getItem('name2')!='')
+            pl2.value= textContent=localStorage.getItem('name2').toUpperCase();
+                else
+                pl2.value='Player2';
+                if(textContent=localStorage.getItem('name1')!='')
+           pl1.value= textContent=localStorage.getItem('name1').toUpperCase();
+                else
+                pl1.value= 'Player1'
+
+        }
+            p1.classList.add('toss');
+            p2.classList.add('toss2');
+           
+            setTimeout(function(){
+                p1.classList.remove('toss');
+            p2.classList.remove('toss2');
+            coinInvisible();
+            },3500);
+
+            
+
+        });
+        function coinInvisible(){
+           
+        p1.classList.add('coinInvisible');
+         p2.classList.add('coinInvisible');
+        }
+        
+        document.getElementById('scr1').textContent= localStorage.getItem('localP1');
+        document.getElementById('scr2').textContent= localStorage.getItem('localP2');
+        document.getElementById('scr0').textContent= localStorage.getItem('localP0');
+        
+        function resetAll(){
+            
+            location.reload();
+      
+          
+            
+        }
+       
+        var plr1_scr = parseInt(localStorage.getItem('localP1')) ;
+        var plr2_scr = parseInt(localStorage.getItem('localP2')) ;
+        var plr0_scr = parseInt(localStorage.getItem('localP0')) ;
+        
+       
+      
+        
+        // document.getElementById('scr0').textContent=plr0_scr;
+
+
+       
+        if(clicked_button== 'b3')
+            var draw_count=9;
+        else if(clicked_button== 'b4')
+        var draw_count=16;
+         else
+        var draw_count=25;
+
+
+
+
+        function draw(){
+            setTimeout(notification,2000);
+            document.getElementById('winName').textContent ='None';
+            plr0_scr++;
+                localStorage.setItem('localP0',plr0_scr);
+            document.getElementById('scr0').textContent= localStorage.getItem('localP0');
+            for(let i=0;i<25;i++){
+                if(box[i])
+                    box[i].classList.add('winning_Anim');
+            }
+        }
+        
+        function G_over(){
+            
+            if(plr0_scr+plr1_scr+plr2_scr==parseInt(localStorage.getItem('Total_Match'))){
+                document.getElementById('R_end').textContent= 'GAME OVER';
+                document.getElementById('ROUNDWINNER').textContent= 'WINNER';
+                document.getElementById('NextRound').remove();
+                for(let i=0;i<25;i++){
+                    if(box[i])
+                    box[i].remove();
+            }
+            if(plr1_scr>plr2_scr){
+                addWinX();
+                document.getElementById('box8').classList.add('gameXO');
+                document.getElementById('winName').textContent= localStorage.getItem('name1').toUpperCase();
+                
+            }
+            else if(plr1_scr<plr2_scr){
+                document.getElementById('box8').classList.add('gameXO');
+                document.getElementById('winName').textContent= localStorage.getItem('name2').toUpperCase();
+                addWinY();
+            }
+            else{
+                document.getElementById('box8').classList.add('gameXO');
+                document.getElementById('winName').textContent= 'None';
+                addWinZ();
+
+            }
+            
+        }
+       
+
+        }
+
+        function notification(){
+        if(localStorage.getItem('RobotOrfriend')!= 'Robot'){
+            document.getElementById('back').remove();
+            document.getElementById('forward').remove();
+        }
+            
+            if( plr0_scr+plr1_scr+plr2_scr==parseInt(localStorage.getItem('Total_Match'))){
+            setTimeout(function (){
+                document.getElementById('box8Container').remove();
+            
+            document.getElementById('Notif_Con').classList.add('vis');
+            document.getElementById('ending').play();
+
+
+            },2000);
+
+ }
+        else{
+            setTimeout(function (){
+                document.getElementById('box8Container').remove();
+            
+            document.getElementById('Notif_Con').classList.add('vis');
+
+            document.getElementById('Rending_sound').play();
+
+
+
+            },800);
+        }
+
+
+}
+
+        document.getElementById('NextRound').addEventListener('click',function(){
+            resetAll();
+        });
+        document.getElementById('StartOver').addEventListener('click',function(){
+            localStorage.setItem('localP0',0);
+            localStorage.setItem('localP1',0);
+            localStorage.setItem('localP2',0);
+            
+            plr0_scr=0;
+            plr0_scr=0;
+            plr0_scr=0;
+            resetAll();
+        });
+        
+
+//plr1name, test
+
+        document.getElementById('back').addEventListener('click',function(){
+            undo();
+
+        })
+        document.getElementById('forward').addEventListener('click',function(){
+            redo();
+
+        })
+        if(localStorage.getItem('RobotOrfriend')== 'Robot'){
+            document.getElementById('back').remove();
+            document.getElementById('forward').remove();
+
+        }
+        
+        
+
+          
+      
+        
+
+
+        
+    </script>
+
+
+</body>
+
+</html>

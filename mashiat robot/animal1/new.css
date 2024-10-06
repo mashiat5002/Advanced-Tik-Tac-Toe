@@ -1,0 +1,87 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrollbars */
+}
+.indrawWincon{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    /* text-wrap: nowrap; */
+    position: relative;
+    margin: 5px;
+}
+.matchDr{
+    font-size: 200%;
+    color: aqua;
+    font-weight: 1000;
+    text-shadow: 2px 2px rgb(1, 2, 2);
+   
+  
+}
+.drawAnim{
+    height: 100%;
+    width: 100%;
+    
+    position: absolute;
+   
+}
+.smBall1{
+    height: 5%;
+    width: 5%;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    position: absolute;
+    
+    
+}
+.smballcon{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    animation:  drawBallcon 1s linear forwards;
+    animation-iteration-count: 5;
+    
+    
+}
+#smBall1{
+    
+    bottom: 0;
+
+}
+#smBall2{
+    
+    left: 0;
+
+}
+#smBall3{
+    
+    right: 0;
+
+}
+#smBall4{
+    
+    top: 0;
+
+}
+@keyframes drawBallcon{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+        visibility: hidden;
+    }
+}
+

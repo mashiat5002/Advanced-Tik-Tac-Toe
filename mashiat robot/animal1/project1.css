@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body{
+    height: 100%;
+    width: 100%;
+    
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: #fff;
+  background-color:var(--primary-color);
+  scroll-behavior: smooth;
+ font-family: 'Poppins', sans-serif;
+ box-sizing: border-box;
+
+}
+
+:root{
+    --primary-color:white;
+    --secondary-color:black;
+    --higher-color:rgb(27, 27, 33);
+    
+}
+.dark{
+    --primary-color:#000106;
+    --secondary-color:#fff;
+    --higher-color:rgb(120, 12, 159);
+}
+
+.header{
+  
+display: flex;
+justify-content: space-between;
+margin: 0 auto;
+
+}
+
+#icon{
+    width:60px ;
+    cursor: pointer;
+    margin-top: 70px;
+    margin-right: 120px;
+}
+
+
+.logo,.gameName{
+    margin-top: 50px;
+    font-size: 400%;
+    text-shadow:3px 3.3px  #646ae2;
+    color: rgb(221, 62, 23);
+    font-weight: 1000;
+    margin-left: 20px;
+
+}
+.box{
+   margin-top: 80px; 
+/* justify-content: center;
+align-items: center; */
+
+height: 450px;
+width: 500px;
+background-color: #e21414;
+border-radius: 20px;
+box-shadow: 2px 2px 15px rgb(238, 7, 7);
+padding: 60px 30px 30px 30px;
+
+}
+.box:hover{
+    background-color:var(--higher-color) ;
+    transition-duration: 2s;
+}
+ a{
+    margin-top: 20px;
+    background-color: transparent;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.menu1,.menu2,.menu3,.menu4 {
+    /* padding-top:  40px; */
+    font-size: 40px;
+    margin: 25px 25px;
+  background-color: #cd1a1a;
+  border-radius: 10px;
+  
+}
+.menu4:hover{
+    text-shadow:3px 2px  #cf0829;
+    font-weight: 600;
+    background-color: #293246;
+}
+.menu3:hover{
+    text-shadow:3px 2px  #cf0829;
+    font-weight: 600;
+    background-color: #293246;
+    
+   
+}
+.menu2:hover{
+    text-shadow:3px 2px  #cf0829;
+    font-weight: 600;
+    background-color: #293246;
+}
+.menu1:hover{
+    text-shadow:3px 2px  #cf0829;
+    font-weight: 600;
+    background-color: #293246;
+}
+
+
+
+.footer {
+    margin-top: 70px;
+
+  text-align: center;
+  height: 200px;
+    width: 500px;
+ 
+}
+
+.footer-text p {
+  font-size: 20px;
+  color:var(--secondary-color);
+}
+ 
+
+  .loginLogoContainer{
+    height: 10px;
+    width: 30px;
+   
+   margin-left: 850px ;
+  cursor: pointer;
+    
+  }

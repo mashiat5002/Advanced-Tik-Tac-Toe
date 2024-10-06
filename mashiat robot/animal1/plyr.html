@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="plyr.css">
+    <link rel="stylesheet" href="gridd.css">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>  
+        <div class="n"> TIC TAC TOE </div>
+        <div class="name">PLAY WITH </div>
+        <div class="grid">
+            <div class="f">
+                <button id="computerButton">COMPUTER</button>
+            </div>
+            <div class="f">
+                <button id="friendButton">FRIEND</button>
+            </div>
+        </div>
+    </center>
+
+    <div id="friendModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal2()">&times;</span>
+       
+            <input type="text" id="player1" placeholder="Player 1 Name">
+        
+            <input type="text" id="player2" placeholder="Player 2 Name">
+
+          
+
+
+
+
+
+
+
+
+
+            <button onclick="startGame()"><a href="five.html">Start Game</a></button>
+            <button id="noWhere" >Total Rounds</button>
+            <button id="opTR1" class="opTR" ><p id="numTR">3</p></button>
+            <button id="opTR2" class="opTR" ><p id="numTR">5</p></button>
+            <button id="opTR3" class="opTR" ><p id="numTR">7</p></button>
+            <button onclick="startGame()"><a href="five.html">Skip</a></button>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div id="computerModal" class="modal">
+
+        <div class="modal-content1">
+            <span class="close" onclick="closeModal()">&times;</span>
+       
+            
+        
+            <H2 id="Level" >Level</H2>
+            <h4 id="easy" class="l"><a href="five.html">Easy</a></h4>
+            <h4 id="medium" class="l"><a href="five.html">Medium</a></h4>
+            <h4 id="hard" class="l"><a href="five.html">Hard</a></h4>
+            <center>
+            <input type="text" id="you" placeholder="Your Name"><br>
+        </center>
+          
+
+            
+            <button id="noWhere" >Total Rounds</button>
+            <button id="2opTR1" class="opTR" ><p id="numTR">3</p></button>
+            <button id="2opTR2" class="opTR" ><p id="numTR">5</p></button>
+            <button id="2opTR3" class="opTR" ><p id="numTR">7</p></button>
+            
+           
+         
+           
+        </div>
+    </div>
+   
+
+  
+
+
+    <script>
+
+// Function to open the modal
+function openModal() {
+    localStorage.setItem('RobotOrfriend','friend');
+    var modal = document.getElementById('friendModal');
+    modal.style.display = 'block';
+}
+
+// Function to close the modal
+function closeModal() {
+    var modal = document.getElementById('computerModal');
+    modal.style.display = 'none';
+}
+function closeModal2() {
+    var modal = document.getElementById('friendModal');
+    modal.style.display = 'none';
+}
+
+// Function to start the game (You can modify this based on your game logic)
+function startGame() {
+    localStorage.setItem('No_robot','1');
+    localStorage.setItem('name1',document.getElementById('player1').value);
+    localStorage.setItem('name2',document.getElementById('player2').value);
+    
+
+    
+    closeModal();
+}
+
+
+
+document.getElementById('friendButton').addEventListener('click', openModal);
+
+document.getElementById('opTR1').addEventListener('click',opacity1);
+document.getElementById('opTR2').addEventListener('click',opacity2);
+document.getElementById('opTR3').addEventListener('click',opacity3);
+document.getElementById('2opTR1').addEventListener('click',_2opacity1);
+document.getElementById('2opTR2').addEventListener('click',_2opacity2);
+document.getElementById('2opTR3').addEventListener('click',_2opacity3);
+
+function opacity1(){
+
+    localStorage.setItem('Total_Match',3);
+    document.getElementById('opTR2').classList.remove('opcitityOptr');
+    document.getElementById('opTR3').classList.remove('opcitityOptr');
+    document.getElementById('opTR1').classList.add('opcitityOptr');
+}
+opacity1();
+function opacity2(){
+    localStorage.setItem('Total_Match',5);
+    document.getElementById('opTR1').classList.remove('opcitityOptr');
+    document.getElementById('opTR3').classList.remove('opcitityOptr');
+    document.getElementById('opTR2').classList.add('opcitityOptr');
+}
+function opacity3(){
+    localStorage.setItem('Total_Match',7);
+    document.getElementById('opTR1').classList.remove('opcitityOptr');
+    document.getElementById('opTR2').classList.remove('opcitityOptr');
+    document.getElementById('opTR3').classList.add('opcitityOptr');
+}
+function _2opacity1(){
+    localStorage.setItem('Total_Match',3);
+    document.getElementById('2opTR2').classList.remove('opcitityOptr');
+    document.getElementById('2opTR3').classList.remove('opcitityOptr');
+    document.getElementById('2opTR1').classList.add('opcitityOptr');
+}
+_2opacity1();
+function _2opacity2(){
+    localStorage.setItem('Total_Match',5);
+    document.getElementById('2opTR1').classList.remove('opcitityOptr');
+    document.getElementById('2opTR3').classList.remove('opcitityOptr');
+    document.getElementById('2opTR2').classList.add('opcitityOptr');
+}
+function _2opacity3(){
+    localStorage.setItem('Total_Match',7);
+    document.getElementById('2opTR1').classList.remove('opcitityOptr');
+    document.getElementById('2opTR2').classList.remove('opcitityOptr');
+    document.getElementById('2opTR3').classList.add('opcitityOptr');
+}
+
+localStorage.setItem('Notification_Header','ROUND ENDED');
+function open() {
+    localStorage.setItem('RobotOrfriend','Robot');
+    var modal = document.getElementById('computerModal');
+    modal.style.display = 'block';
+}
+
+// Function to close the modal
+function close() {
+    var modal1 = document.getElementById('computerModal');
+    modal1.style.display = 'none';
+}
+
+
+function Game() {
+    var l = document.getElementById('level').value;
+    var  e= document.getElementById('easy').value;
+    var m = document.getElementById('medium').value;
+    var  h= document.getElementById('hard').value;
+
+    
+    close();
+}
+
+
+document.getElementById('computerButton').addEventListener('click',open);
+
+
+document.getElementById('easy').addEventListener("click",function (){
+    setnameForPlayWithRobot();
+    
+    localStorage.setItem('difficulty','e');
+});
+document.getElementById('medium').addEventListener("click",function (){
+    localStorage.setItem('difficulty','m');
+    setnameForPlayWithRobot();
+});
+document.getElementById('hard').addEventListener("click",function (){
+    localStorage.setItem('difficulty','h');
+    setnameForPlayWithRobot();
+});
+localStorage.setItem('localP1',0);
+localStorage.setItem('localP2',0);
+localStorage.setItem('localP0',0);
+
+document.getElementById('computerButton').addEventListener('click',function(){
+    localStorage.setItem('No_robot','0');
+})
+
+
+
+document.getElementById('computerButton').addEventListener('click', function(){
+    // document.getElementById('computerModal').classList.add('vsblt1');
+    
+});
+document.getElementById('cls').addEventListener('click', function(){
+    document.getElementById('computerModal').classList.add('vsblt0');
+});
+
+
+function setnameForPlayWithRobot(){
+    localStorage.setItem('name1','Robot S.A.M');
+    if(document.getElementById('you').value== ''){
+        localStorage.setItem('name2','You');
+    }
+    else{
+        
+        localStorage.setItem('name2',document.getElementById('you').value);
+
+    }
+}
+    </script>
+</body>
+</html>
